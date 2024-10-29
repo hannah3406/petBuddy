@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev:web": "nx dev web",
+    "dev:api": "nx dev api",
+    "dev:web": "nx serve web --configuration=development",
+    "dev": "nx run-many --target=serve --projects=api,web --parallel=true --configuration=development",
     "start:api": "nx serve api",
-    "start:web": "nx serve web",
-    "start:all": "nx run-many --target=serve --projects=api,web --parallel=true",
+    "start:web": "nx serve web --configuration=production",
+    "start:all": "nx run-many --target=serve --projects=api,web --parallel=true --configuration=production",
     "build": "nx run-many --target=build --projects=api,web --parallel=true",
     "test": "nx run-many --target=test --projects=api,web --parallel=true",
     "lint": "nx run-many --target=lint --projects=api,web --parallel=true"
