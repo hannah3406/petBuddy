@@ -4,15 +4,20 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as Avatar from '@radix-ui/react-avatar';
 import styles from './index.module.scss';
+import Image from 'next/image';
 
 export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <img src="/logo.svg" alt="PetBuddy" />
+          <Image
+            src="/images/home/logo.png"
+            alt="PetBuddy"
+            width={150}
+            height={40}
+          />
         </div>
-
         <NavigationMenu.Root className={styles.nav}>
           <NavigationMenu.List className={styles.navList}>
             <NavigationMenu.Item>
