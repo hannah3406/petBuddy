@@ -1,0 +1,21 @@
+// 색상 변수
+$primary: #ff6b6b; // 따뜻한 핑크레드
+$secondary: #4ecdc4; // 민트색
+$accent: #ffe66d; // 밝은 노랑
+$background: #ffffff;
+$text-primary: #2c3e50;
+$text-secondary: #95a5a6;
+
+// 그림자
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// 반응형 브레이크포인트
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// 둥근 모서리
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
