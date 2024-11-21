@@ -1,18 +1,19 @@
-import Footer from "../Footer";
-import Header from "../Header";
+'use client';
 
-interface LayoutProps{
-    children:React.ReactNode;
+import { Footer } from '../Footer';
+import { Header } from '../Header';
+import styles from './index.module.scss';
+
+interface LayoutProps {
+  children: React.ReactNode;
 }
-const Layout=({children}:LayoutProps)=>{
-  return(
-    <div>
-        <Header/>
-        <main>
-            {children}
-        </main>
-        <Footer/>
+
+export function Layout({ children }: LayoutProps) {
+  return (
+    <div className={styles.layout}>
+      <Header />
+      <main className={styles.main}>{children}</main>
+      <Footer />
     </div>
-  )
+  );
 }
-export default Layout;

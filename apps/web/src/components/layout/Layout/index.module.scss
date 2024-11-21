@@ -1,0 +1,114 @@
+@import '@/styles/variables';
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa; // 매우 연한 그레이 배경
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px; // 상단 패딩은 헤더 높이 고려
+  position: relative;
+
+  // 태블릿
+  @media (max-width: $tablet) {
+    padding: 70px 16px 32px;
+  }
+
+  // 모바일
+  @media (max-width: $mobile) {
+    padding: 60px 12px 24px;
+  }
+
+  // 선택적: 페이지 전환 애니메이션
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+// 컨텐츠 최대 너비 제한
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: $tablet) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+// 섹션 스타일 (필요한 경우)
+.section {
+  margin: 40px 0;
+  padding: 24px;
+  background-color: $background;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+
+  @media (max-width: $mobile) {
+    margin: 24px 0;
+    padding: 16px;
+  }
+}
+
+// 페이지 전환 애니메이션
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 선택적: 로딩 상태를 위한 스켈레톤 스타일
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba($text-secondary, 0.1) 25%,
+    rgba($text-secondary, 0.2) 37%,
+    rgba($text-secondary, 0.1) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeletonLoading 1.4s ease infinite;
+  border-radius: $radius-sm;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+// 선택적: 에러 상태 스타일
+.error {
+  padding: 16px;
+  background-color: rgba(#ff4d4d, 0.1);
+  border: 1px solid #ff4d4d;
+  border-radius: $radius-md;
+  color: #ff4d4d;
+  margin: 16px 0;
+}
+
+// 선택적: 성공 상태 스타일
+.success {
+  padding: 16px;
+  background-color: rgba(#4caf50, 0.1);
+  border: 1px solid #4caf50;
+  border-radius: $radius-md;
+  color: #4caf50;
+  margin: 16px 0;
+}

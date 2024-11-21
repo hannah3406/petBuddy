@@ -1,5 +1,5 @@
-import Layout from '@/components/layout/Layout';
-import '../styles/globals.scss'
+import { Layout } from '@/components/layout/Layout';
+import '../styles/globals.scss';
 
 export const metadata = {
   title: 'Welcome to web',
@@ -13,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body><Layout>{children}</Layout></body>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,182 @@
+@import '@/styles/variables';
+
+.footer {
+  background-color: #2c3e50; // 진한 네이비 계열
+  color: #ffffff;
+  padding: 48px 0 24px;
+  margin-top: auto; // 항상 페이지 하단에 위치
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: $tablet) {
+    padding: 0 16px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.section {
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: $accent; // 강조색상
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: rgba(#ffffff, 0.9);
+  }
+
+  p {
+    color: rgba(#ffffff, 0.7);
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 8px;
+
+      a {
+        color: rgba(#ffffff, 0.7);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-size: 14px;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+.bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(#ffffff, 0.1);
+  text-align: center;
+
+  p {
+    color: rgba(#ffffff, 0.5);
+    font-size: 12px;
+  }
+}
+
+// 선택적: 소셜 미디어 아이콘
+.socialLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+
+  a {
+    color: rgba(#ffffff, 0.7);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// 선택적: 뉴스레터 구독 폼
+.newsletter {
+  margin-top: 16px;
+
+  .inputGroup {
+    display: flex;
+    gap: 8px;
+
+    input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid rgba(#ffffff, 0.2);
+      border-radius: $radius-sm;
+      background: rgba(#ffffff, 0.1);
+      color: #ffffff;
+      font-size: 14px;
+
+      &::placeholder {
+        color: rgba(#ffffff, 0.5);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $accent;
+      }
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: $accent;
+      border: none;
+      border-radius: $radius-sm;
+      color: #2c3e50;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: darken($accent, 10%);
+      }
+    }
+  }
+}
+
+// 애니메이션 효과
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
